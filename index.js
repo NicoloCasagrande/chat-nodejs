@@ -1,6 +1,7 @@
 const express = require("express");
 const cors = require("cors");
 const axios = require("axios");
+const port = process.env.port || 3000
 
 const app = express();
 app.use(express.json());
@@ -22,4 +23,6 @@ app.post("/authenticate", async (req, res) => {
   }
 });
 
-app.listen(3001);
+app.listen(port, () => {
+  console.log('app is listening');
+});
